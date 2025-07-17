@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -304,6 +306,12 @@ export default function ResearchPage() {
               <Button
                 size="lg"
                 className="bg-white text-green-700 hover:bg-green-50 transform hover:scale-105 transition-all duration-300"
+                onClick={() => {
+                  const phoneNumber = "916304894331";
+                  const message = "Hello! I would like to discuss my project with your R&D team. Please assist me.";
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
               >
                 Discuss Your Project
               </Button>

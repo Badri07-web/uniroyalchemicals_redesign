@@ -480,7 +480,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      // ...existing code...
       <Footer />
       <WhatsAppWidget />
     </div>

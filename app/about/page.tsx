@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -93,6 +95,10 @@ export default function AboutPage() {
                 height={500}
                 className="rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300"
               />
+              <div className="absolute bottom-4 right-4 bg-green-600 text-white rounded-xl shadow-xl px-8 py-6 text-center z-10" style={{minWidth:'140px'}}>
+                <div className="text-2xl font-extrabold mb-1">40+</div>
+                <div className="text-base font-normal">Years Experience</div>
+              </div>
             </FadeInSection>
           </div>
         </div>
@@ -257,7 +263,13 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-green-700 hover:bg-green-50 transform hover:scale-105 transition-all duration-300 animate-bounce"
+                className="bg-white text-green-700 hover:bg-green-50 transform hover:scale-105 transition-all duration-300"
+                onClick={() => {
+                  const phoneNumber = "916304894331";
+                  const message = "Hello! I would like to contact your team regarding your company and services. Please assist me.";
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
               >
                 Contact Our Team
               </Button>

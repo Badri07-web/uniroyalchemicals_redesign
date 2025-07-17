@@ -59,7 +59,6 @@ export function Footer() {
                 { name: "Lead Stabilisers", href: "/products/lead-stabilisers" },
                 { name: "Calcium Zinc Stabilisers", href: "/products/calcium-zinc-stabilisers" },
                 { name: "Metallic Stearates", href: "/products/metallic-stearates" },
-                { name: "Plasticisers", href: "/products/plasticisers" },
                 { name: "Lubricants", href: "/products/lubricants" },
               ].map((product) => (
                 <li key={product.name}>

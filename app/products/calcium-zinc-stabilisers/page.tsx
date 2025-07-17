@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -475,8 +477,17 @@ export default function CalciumZincStabilisersPage() {
               discover sustainable PVC solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-900 hover:bg-green-50">
-                Contact Secunderabad Office
+              <Button
+                size="lg"
+                className="bg-white text-green-900 hover:bg-green-50"
+                onClick={() => {
+                  const phoneNumber = "916304894331";
+                  const message = "Hello! I need technical support regarding calcium zinc stabilisers. Please assist me.";
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
+              >
+                Contact Technical Team
               </Button>
               <Button
                 size="lg"

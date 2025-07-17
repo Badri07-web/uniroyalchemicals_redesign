@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, Globe, MessageSquare } from "lucide-react"
@@ -297,6 +299,12 @@ export default function ContactPage() {
               <Button
                 size="lg"
                 className="bg-green-600 hover:bg-green-700 text-white transform hover:scale-105 transition-all duration-300 animate-bounce"
+                onClick={() => {
+                  const phoneNumber = "916304894331";
+                  const message = "Hello! I need support regarding your products/services. Please assist me.";
+                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
               >
                 Contact Our Support Team
               </Button>
