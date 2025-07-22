@@ -14,6 +14,7 @@ import { FadeInSection } from "@/components/fade-in-section"
 import { ClientCarousel } from "@/components/client-carousel"
 import { HeroBackground } from "@/components/hero-background"
 import { TypewriterText } from "@/components/typewriter-text"
+import { VerticalImageScroll } from "@/components/vertical-image-scroll"
 
 export default function HomePage() {
   return (
@@ -39,8 +40,7 @@ export default function HomePage() {
 
             <FadeInSection delay={1200}>
               <p className="text-lg md:text-xl lg:text-2xl text-green-100 leading-relaxed max-w-4xl mx-auto mb-8 md:mb-12">
-                Leading manufacturer of PVC additives including Lead Stabilisers, Calcium Zinc Stabilisers, and Metallic
-                Stearates, serving industries across India with unmatched quality and reliability.
+                Formulating Stability. Delivering Performance
               </p>
             </FadeInSection>
 
@@ -98,7 +98,7 @@ export default function HomePage() {
       {/* About Section */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-8 md:gap-12 items-center">
             <FadeInSection direction="left" className="relative">
               <Image
                 src="/placeholder.svg?height=500&width=600&text=PVC+Manufacturing+Excellence"
@@ -107,15 +107,9 @@ export default function HomePage() {
                 height={500}
                 className="rounded-lg shadow-xl w-full h-auto"
               />
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-green-600 text-white p-4 md:p-6 rounded-lg shadow-xl">
-                <div className="text-center">
-                  <div className="text-xl md:text-2xl font-bold">1984</div>
-                  <div className="text-xs md:text-sm">Established</div>
-                </div>
-              </div>
             </FadeInSection>
 
-            <FadeInSection direction="right" className="space-y-6 md:space-y-8">
+            <FadeInSection direction="right" className="space-y-6 md:space-y-8 lg:col-span-2">
               <div className="space-y-4">
                 <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-green-700">About Uniroyal Chemicals</h2>
                 <div className="w-16 md:w-20 h-1 bg-green-600 rounded-full"></div>
@@ -210,9 +204,9 @@ export default function HomePage() {
               },
             ].map((feature, index) => (
               <FadeInSection key={index} delay={index * 100}>
-                <Card className="border-green-200 hover:border-green-400 hover:shadow-lg hover:shadow-green-200/50 transition-all duration-300 transform hover:scale-105 h-full bg-white">
-                  <CardHeader className="pb-4">
-                    <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <Card className="border-green-200 hover:border-green-400 hover:shadow-lg hover:shadow-green-200/50 transition-all duration-300 transform hover:scale-105 h-full bg-white consistent-card dynamic-hover">
+                  <CardHeader className="consistent-card-header pb-4">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                       <feature.icon className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
                     </div>
                     <CardTitle className="text-lg md:text-xl text-green-700">{feature.title}</CardTitle>
@@ -269,7 +263,7 @@ export default function HomePage() {
               },
             ].map((product, index) => (
               <FadeInSection key={index} delay={index * 150}>
-                <Card className="group hover:shadow-xl hover:shadow-green-200/50 transition-all duration-300 cursor-pointer transform hover:scale-105 h-full border-green-200 hover:border-green-400 bg-white">
+                <Card className="group hover:shadow-xl hover:shadow-green-200/50 transition-all duration-300 cursor-pointer transform hover:scale-105 h-full border-green-200 hover:border-green-400 bg-white consistent-card dynamic-hover">
                   <div className="relative overflow-hidden">
                     <Image
                       src={`/placeholder.svg?height=200&width=300&text=${product.title.replace(" ", "+")}`}
@@ -285,7 +279,7 @@ export default function HomePage() {
                     )}
                     <div className="absolute inset-0 bg-green-600/0 group-hover:bg-green-600/10 transition-colors duration-300"></div>
                   </div>
-                  <CardHeader className="pb-4">
+                  <CardHeader className="consistent-card-header pb-4">
                     <CardTitle className="text-lg md:text-xl text-green-700 group-hover:text-green-800">
                       {product.title}
                     </CardTitle>
@@ -293,7 +287,7 @@ export default function HomePage() {
                       {product.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="consistent-card-content pt-0">
                     <Button
                       variant="outline"
                       className="w-full group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-colors border-green-600 text-green-600 bg-transparent"
@@ -342,15 +336,15 @@ export default function HomePage() {
               { name: "Plastic Industry", image: "/placeholder.svg?height=120&width=120&text=Plastic" },
             ].map((industry, index) => (
               <FadeInSection key={index} delay={index * 100}>
-                <Card className="text-center hover:shadow-lg hover:shadow-green-200/50 transition-all duration-300 cursor-pointer group transform hover:scale-105 border-green-200 hover:border-green-400 bg-white">
-                  <CardHeader className="pb-4 p-3 md:p-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 overflow-hidden rounded-full border-2 border-green-200 group-hover:border-green-400 transition-colors duration-300">
+                <Card className="text-center hover:shadow-lg hover:shadow-green-200/50 transition-all duration-300 cursor-pointer group transform hover:scale-105 border-green-200 hover:border-green-400 bg-white consistent-card dynamic-hover">
+                  <CardHeader className="consistent-card-header pb-4 p-3 md:p-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 overflow-hidden rounded-full border-2 border-green-200 group-hover:border-green-400 transition-colors duration-300 flex items-center justify-center">
                       <Image
                         src={industry.image || "/placeholder.svg"}
                         alt={industry.name}
                         width={80}
                         height={80}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>
                     <CardTitle className="text-xs md:text-sm text-green-700 group-hover:text-green-800 leading-tight">
@@ -364,6 +358,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Vertical Image Scroll Section */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <FadeInSection direction="left" className="space-y-6 md:space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-green-700">Our Facilities</h2>
+                <div className="w-16 md:w-20 h-1 bg-green-600 rounded-full"></div>
+                <div className="space-y-4 text-base md:text-lg text-gray-700 leading-relaxed">
+                  <p>
+                    Our state-of-the-art manufacturing and testing facilities are equipped with the latest technology
+                    to ensure the highest quality standards in PVC additive production.
+                  </p>
+                  <p>
+                    From advanced laboratory testing to precision manufacturing processes, every aspect of our
+                    operations is designed to deliver excellence and innovation.
+                  </p>
+                </div>
+              </div>
+            </FadeInSection>
+
+            <FadeInSection direction="right">
+              <VerticalImageScroll />
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
       {/* Our Clients Section */}
       <section className="py-12 md:py-20 bg-green-50">
         <div className="container mx-auto px-4">

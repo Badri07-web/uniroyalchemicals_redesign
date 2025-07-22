@@ -129,6 +129,41 @@
   }
 }
 
+@keyframes border-dance {
+  0% {
+    border-image-source: linear-gradient(90deg, #16a34a, transparent, transparent, transparent);
+  }
+  25% {
+    border-image-source: linear-gradient(180deg, transparent, #16a34a, transparent, transparent);
+  }
+  50% {
+    border-image-source: linear-gradient(270deg, transparent, transparent, #16a34a, transparent);
+  }
+  75% {
+    border-image-source: linear-gradient(360deg, transparent, transparent, transparent, #16a34a);
+  }
+  100% {
+    border-image-source: linear-gradient(90deg, #16a34a, transparent, transparent, transparent);
+  }
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
@@ -153,6 +188,75 @@
   animation: bounce-slow 3s ease-in-out infinite;
 }
 
+.animate-border-dance {
+  animation: border-dance 3s linear infinite;
+  border: 2px solid transparent;
+  border-image-slice: 1;
+}
+
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 30s linear infinite;
+}
+
+.animate-scroll-vertical {
+  animation: scroll-vertical 20s linear infinite;
+}
+
+/* Consistent box styles */
+.consistent-box {
+  @apply min-h-[200px] flex flex-col justify-center items-center text-center p-6;
+}
+
+.consistent-card {
+  @apply h-full min-h-[280px] flex flex-col;
+}
+
+.consistent-card-header {
+  @apply flex-1 flex flex-col justify-center items-center text-center;
+}
+
+.consistent-card-content {
+  @apply flex-shrink-0 p-6 pt-0;
+}
+
+/* Dynamic hover effects */
+.dynamic-hover {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.dynamic-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #16a34a, transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.dynamic-hover::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #16a34a, transparent);
+  transition: top 0.5s ease-in-out 0.1s;
+}
+
+.dynamic-hover:hover::before {
+  left: 0;
+}
+
+.dynamic-hover:hover::after {
+  top: 0;
+}
+
+.dynamic-hover:hover {
+  @apply border-green-400 shadow-lg shadow-green-200/50 scale-105;
+}
 /* Grid pattern */
 .bg-grid-white\/\[0\.05\] {
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);

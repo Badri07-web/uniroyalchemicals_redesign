@@ -9,20 +9,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center justify-center lg:justify-start space-x-3">
               <Image
                 src="/images/uniroyal-logo-circle.png"
                 alt="Uniroyal Chemicals"
                 width={40}
                 height={40}
-                className="w-8 h-8 md:w-10 md:h-10"
+                className="w-8 h-8 md:w-10 md:h-10 object-contain"
               />
-              <div>
-                <div className="text-base md:text-lg font-bold">UNIROYAL CHEMICALS</div>
-                <div className="text-xs md:text-sm text-green-200">PVT. LTD.</div>
+              <div className="text-center lg:text-left">
+                <div className="text-base md:text-lg font-bold leading-tight">UNIROYAL CHEMICALS</div>
+                <div className="text-xs md:text-sm text-green-200 leading-tight">PVT. LTD.</div>
               </div>
             </div>
-            <p className="text-green-100 text-sm leading-relaxed">
+            <p className="text-green-100 text-sm leading-relaxed text-center lg:text-left">
               Leading manufacturer of PVC additives with 40+ years of excellence in specialty chemicals.
             </p>
           </div>

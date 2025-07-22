@@ -49,17 +49,17 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
+          <Link href="/" className="flex items-center justify-center space-x-2 md:space-x-3 flex-shrink-0">
             <Image
               src="/images/uniroyal-logo-circle.png"
               alt="Uniroyal Chemicals"
               width={48}
               height={48}
-              className="w-10 h-10 md:w-12 md:h-12"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
             />
-            <div className="hidden sm:block">
-              <div className="text-sm md:text-lg font-bold text-gray-900">UNIROYAL CHEMICALS</div>
-              <div className="text-xs md:text-sm text-green-600 font-semibold">PVT. LTD.</div>
+            <div className="hidden sm:flex sm:flex-col sm:justify-center">
+              <div className="text-sm md:text-lg font-bold text-gray-900 text-center leading-tight">UNIROYAL CHEMICALS</div>
+              <div className="text-xs md:text-sm text-green-600 font-semibold text-center">PVT. LTD.</div>
             </div>
           </Link>
 
